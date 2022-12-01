@@ -1,48 +1,14 @@
-%% Data downloader from Suimon Suishitsu database
-% coded by T.Koshiba, DPRI
-% history   T.Koshiba
-%           08 JUN 2019, v1
-%           30 JUL 2020, v2
-%               : major change
-%           14 AUG 2020
-%               : Debug to be able to deal with a year with partial data
-%           23 NOV 2022
-%               : update to address for the change of web address
-% suimon suishitsu database (水文水質データベース)
-% http://www1.river.go.jp/
-%
-%
-%
-%
-%
-
-%%
 function get_suimon(observation_point, loc_name, item, BGNYEAR, ENDYEAR)
-% clear all; clc;
-%==========================================================================
-%                                Inputs 
-%==========================================================================
-% Observatory number (観測所記号 )
-% observation_point = '306041286606290'; 
+%GET_SUIMON
+%   get suimon suishitsu.
+%   get_suimon(location_code, location_name, item, begin_year, end_year)
+%   items: 1 = Water discharge, 2 = Water depth, 3 = Precipitation
+%   Example:
+%   get_suimon('306041286606290', 'Kameoka', 1, 2015, 2015)
 
-% location number, this will be used for output files
-% loc_name = 'Kameoka';  
 
-% what kind of information would you like to download?
-% 1 = Water discharge
-% 2 = Water depth
-% 3 = Precipitation
-% item = 1; 
-
-% start and end year, month
-% BGNYEAR = 2015;
-% ENDYEAR = 2015;
 BGNMNTH = 1;
 ENDMNTH = 12;
-%
-
-%==========================================================================
-%==========================================================================
 
 % Make a month and date list
 items = {'DspWaterData.exe?KIND=5',...
