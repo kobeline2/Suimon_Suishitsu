@@ -22,16 +22,16 @@
 %                                Inputs 
 %==========================================================================
 % Observatory number (観測所記号 )
-observation_point = '106041286618020'; 
+observation_point = '306041286606290'; 
 
 % location number, this will be used for output files
-loc_name = 'Tonoda';  
+loc_name = 'Kameoka';  
 
 % what kind of information would you like to download?
 % 1 = Water discharge
 % 2 = Water depth
 % 3 = Precipitation
-item = 3; 
+item = 1; 
 
 % start and end year, month
 BGNYEAR = 2015;
@@ -83,8 +83,8 @@ for I = 1:Num_mnth
         meta = strsplit(D, '#');
         meta = meta{1};
     end
-    D = strsplit(D,'閉局\r\n#\r');
-    D =D{2};
+    D = strsplit(D,'#\r\n');
+    D =D{3};
     
     % output data or not %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     if outData
