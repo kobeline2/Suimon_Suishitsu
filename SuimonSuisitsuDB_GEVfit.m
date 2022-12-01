@@ -150,27 +150,27 @@ if outAnnualMax
     out4suimonUtil(maxD, maxDays, meta, seqHour)
 end
 %%
-L = size(dataAll, 2);
+% L = size(dataAll, 2);
 % for I = 1:L
-I = 17;
-%     subplot(L, 1, I)
-    plot([1:24*366]/24, dataAll(:, I), 'k'); hold on
-    b = double(isnan(dataAll(:, I)));
-    b(b==0) = nan;
-    scatter([1:24*366]/24, b, 'r')
-    
-    
-    iMax = maxD(I, 2);
-    if iMax ~= 0
-        dMax = dataAll(:, I);
-        dMax(1:iMax-1) = nan;
-        dMax(iMax+seqHour:end) = nan;
-        plot([1:24*366]/24, dMax, 'b', 'LineWidth', 2)
-    end
-    
-    
-    l = legend(num2str(BGNYEAR+I-1), 'NaN', 'max');
-    l.Box = 'off'; hold off
+% % I = 17;
+% %     subplot(L, 1, I)
+%     plot([1:24*366]/24, dataAll(:, I), 'k'); hold on
+%     b = double(isnan(dataAll(:, I)));
+%     b(b==0) = nan;
+%     scatter([1:24*366]/24, b, 'r')
+%     
+%     
+%     iMax = maxD(I, 2);
+%     if iMax ~= 0
+%         dMax = dataAll(:, I);
+%         dMax(1:iMax-1) = nan;
+%         dMax(iMax+seqHour:end) = nan;
+%         plot([1:24*366]/24, dMax, 'b', 'LineWidth', 2)
+%     end
+%     
+%     
+%     l = legend(num2str(BGNYEAR+I-1), 'NaN', 'max');
+%     l.Box = 'off'; hold off
 % end
 %%
 % clear variables
